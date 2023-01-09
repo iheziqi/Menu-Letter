@@ -1,9 +1,10 @@
 import { emailHTML } from './emailTemplate.js';
 import { sendEmail } from './sendEmail.js';
+import { readFileSync } from 'fs';
 
-// all users array
-const receivers = ['heziqi4399@gmail.com', 'renshuang1993@gmail.com', '942851168@qq.com', 'yqli0916@gmail.com']
-// const receivers = ['ziqi.he@fau.de', 'heziqi4399@gmail.com', 'yqli0916@gmail.com']
+const receivers = readFileSync('/code/mensa_scraping/receivers.txt', 'utf8').toString().split('\n');
+receivers.pop();
+console.log(receivers);
 
 // send email to every user;
 receivers.forEach((receiver) => {
@@ -15,6 +16,3 @@ receivers.forEach((receiver) => {
 		console.log(err);
 	});
 });
-
-// send email;
-// sendEmail('heziqi4399@gmail.com', html);
