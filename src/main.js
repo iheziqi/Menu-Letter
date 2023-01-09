@@ -9,7 +9,7 @@ const receivers = ['ziqi.he@fau.de', 'heziqi4399@gmail.com', 'yqli0916@gmail.com
 receivers.forEach((receiver) => {
 	emailHTML()
 		.then((data) => {
-			sendEmail('heziqi4399@gmail.com', data);
+			sendEmail(receiver, data);
 		})
 		.catch((err) => {
 		console.log(err);

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!usr/bin/zsh
 
 node /code/mensa_scraping/src/main.js
 now=$(date)
