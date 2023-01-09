@@ -1,4 +1,10 @@
 import nodemailer from 'nodemailer';
+import { readFileSync } from 'fs';
+
+const smtpInfo = readFileSync('/code/mensa_scraping/smtp_user_info.txt', 'utf8').toString().split('\n');
+smtpInfo.pop();
+const user = smtpInfo[0];
+const pass = smtpInfo[1];
 
 
 export function sendEmail(receiver, menuHTML) {
@@ -8,8 +14,8 @@ export function sendEmail(receiver, menuHTML) {
 		post: 587,
 		secure: false,
 		auth: {
-			user: '1006577139@qq.com',
-			pass: 'wykxtygeuxtabcaa',
+			user: user, 
+			pass: pass,
 		},
 	});
 
