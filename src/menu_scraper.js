@@ -17,11 +17,18 @@ export async function getMenu(url) {
 		// handle sucess
 		const data = response.data;
 		// use JSDOM constructor
-		const {document} = (new JSDOM(data)).window;
+		const { window } = new JSDOM(data, { runScripts: "outside-only" });
+		// remove all the <details> tag, because Gmail client does not support it
+		window.eval(`
+ 				const details = document.getElementsByTagName('details');
+                Array.from(details).forEach((item) => {
+                    item.remove();
+                });
+			`);
 		// get the menu div element
-		const mensaDivElement = document.querySelector('div[style*="border-radius: 4px 4px 0px 0px;"]').innerHTML;
+		const  mensaDivElement = window.document.querySelector('div[style*="border-radius: 4px 4px 0px 0px;"]');
 
-		return mensaDivElement;
+		return mensaDivElement.innerHTML;
 	} catch(error) {
 		console.error(error);
 	}
