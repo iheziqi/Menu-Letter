@@ -14,6 +14,6 @@ receivers.forEach((receiver) => {
 			sendEmail(receiver, data);
 		})
 		.catch((err) => {
-		console.log(err);
+			console.log(err);
 	});
 });

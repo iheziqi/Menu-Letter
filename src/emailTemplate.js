@@ -327,10 +327,10 @@ export async function emailHTML () {
 					</tr>
 				</table>
 
-				<script src="./app.js"></script>
 			</body>
 		</html>`;
 	} catch(error) {
 		console.log(error);
 	}
+}
 
