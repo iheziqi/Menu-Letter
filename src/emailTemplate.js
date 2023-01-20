@@ -2,10 +2,10 @@ import {generateMenuTable} from './generateMenuHtml.js';
 import {eurToCnyCurrencyRate} from './exchangeRate_scraper.js';
 
 const mensaMap = {
-	'sued': {name: 'Mensa TechFak', url: 'https://www.werkswelt.de/index.php?id=sued&setlang=en'},
-	'lmpl': {name: 'Mensa Langemarckplatz Erlangen', url: 'https://www.werkswelt.de/index.php?id=lmpl&setlang=en'},
-	'mohm': {name: 'Mensa Ohm Nürnberg', url: 'https://www.werkswelt.de/index.php?id=mohm&setlang=en'},
-	'isch': {name: 'Mensa Insel Schütt', url: 'https://www.werkswelt.de/index.php?id=isch&setlang=en'},
+	'sued': {name: 'Mensa TechFak', url: 'https://www.werkswelt.de/index.php?id=sued'},
+	'lmpl': {name: 'Mensa Langemarckplatz Erlangen', url: 'https://www.werkswelt.de/index.php?id=lmpl'},
+	'mohm': {name: 'Mensa Ohm Nürnberg', url: 'https://www.werkswelt.de/index.php?id=mohm'},
+	'isch': {name: 'Mensa Insel Schütt', url: 'https://www.werkswelt.de/index.php?id=isch'},
 }
 
 export async function emailHTML () {
