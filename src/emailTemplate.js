@@ -145,7 +145,7 @@ export async function emailHTML () {
 						visibility: hidden;
 						width: 0;
 					"
-					>Check out all mensa menu here!</span
+					>Check out all mensa menus here!</span
 				>
 				<table
 					role="presentation"
@@ -222,6 +222,28 @@ export async function emailHTML () {
 							</table>
 								<!-- END CURRENY RATE -->
 
+								<!-- START MENU NAV -->
+							<table role="presentation" class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; background: #ffffff; border-radius: 3px; width: 100%;" width="100%">
+								<!-- START MAIN CONTENT AREA -->
+								<tr>
+									<td class="wrapper" style="font-family: sans-serif; font-size: 14px; vertical-align: top; box-sizing: border-box; padding: 20px;" valign="top">
+									  <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;" width="100%">
+										<tr>
+										  <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;" valign="top">
+											<div style="background-color:#f6f6f6; color:#000000; border-radius: 4px 4px 0px 0px; padding: 8px;">
+											<a href="#sued" style="color: #1d4ed8; display: block">Mensa TechFak</a>
+											<a href="#lmpl" style="color: #1d4ed8; display: block">Mensa Langemarckplatz Erlangen</a>
+											<a href="#mohm" style="color: #1d4ed8; display: block">Mensa Ohm Nürnberg</a>
+											<a href="#isch" style="color: #1d4ed8; display: block">Mensa Insel Schütt</a>
+											<div>
+										  </td>
+										</tr>
+									  </table>
+									</td>
+								  </tr>
+							</table>
+								<!-- END MENU NAV -->
+
 								<!-- START MENU -->
 								${allMenuTables}
 								<!-- END MENU -->
@@ -271,7 +293,7 @@ export async function emailHTML () {
 														font-size: 10px;
 														text-align: center;
 													"
-													>Menu Letter v1.0.1 Created by
+													>Menu Letter v1.0.2 Created by
 													Ziqi</span
 												>
 												<br />
