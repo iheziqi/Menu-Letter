@@ -1,5 +1,6 @@
 import {generateMenuTable} from './generateMenuHtml.js';
 import {eurToCnyCurrencyRate} from './exchangeRate_scraper.js';
+import { dbFilePath, connectDb, insertRow, selectRows, closeDb } from './db.cjs';
 
 const mensaMap = {
 	'sued': {name: 'Mensa TechFak', url: 'https://www.werkswelt.de/index.php?id=sued'},
@@ -7,6 +8,9 @@ const mensaMap = {
 	'mohm': {name: 'Mensa Ohm Nürnberg', url: 'https://www.werkswelt.de/index.php?id=mohm'},
 	'isch': {name: 'Mensa Insel Schütt', url: 'https://www.werkswelt.de/index.php?id=isch'},
 }
+const mensaName = Object.keys(mensaMap);
+
+const filepath = dbFilePath;
 
 export async function emailHTML () {
 
@@ -14,6 +18,19 @@ export async function emailHTML () {
 		// get mensa menu html
 		const allMenuTablesArray = await generateMenuTable(mensaMap);
 		const allMenuTables = allMenuTablesArray.join('');
+
+		// load everyday menus to database
+		try {
+			const date = new Date().toLocaleDateString();
+			const db = connectDb(filepath);
+			allMenuTablesArray.forEach((menu, index) => {
+				insertRow(db, mensaName[index], date, menu);
+			})
+			closeDb(db);
+
+		} catch (err) {
+			console.log(err);
+		}
 
 		// get EUR-CNY exchange rate 
 		const eurToCnyData = await eurToCnyCurrencyRate();

@@ -1,6 +1,5 @@
 import { getMenu } from './menu_scraper.js';
 
-
 export async function generateMenuTable (mensaDictionary) {
 	const menuTables = [];
 	for (const mensa in mensaDictionary) {
@@ -32,7 +31,7 @@ export async function generateMenuTable (mensaDictionary) {
 			</table>
 			<!-- END START CENTERED WHITE CONTAINER -->
 			`; 
-
+			
 			menuTables.push(menuTable);
 
 		} catch(error) {
