@@ -21,9 +21,11 @@ export async function getMenu(url) {
 		// remove all the <details> tag, because Gmail client does not support it
 		window.eval(`
  				const details = document.getElementsByTagName('details');
+				const form = document.querySelector('form');
                 Array.from(details).forEach((item) => {
                     item.remove();
                 });
+				form.remove();
 			`);
 		// get the menu div element
 		const  mensaDivElement = window.document.querySelector('div[style*="border-radius: 4px 4px 0px 0px;"]');

@@ -1,3 +1,8 @@
-src/main.js
+# node modules
 node_modules
+
+# database file
 db
+
+# shell scripts
+*.sh
