@@ -4,6 +4,4 @@ This project scrapes all menus from the websites of Studierendenwerk Mensa in th
 
 No need to look up on the website everyday!
 
-![menu-letter.gif](/Users/heziqi/Downloads/menu-letter.gif)
-
-
+![menu-letter.gif](./menu-letter.gif)
